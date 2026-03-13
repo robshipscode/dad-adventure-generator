@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Wins Dashboard</title>
+<title>Adventure Generator</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h1>Team Wins Dashboard</h1>
-<p>First version running 🚀</p>
+<h1>Dad Adventure Generator</h1>
+
+<select id="kid">
+<option value="annabelle">Annabelle</option>
+<option value="jack">Jack</option>
+<option value="both">Both</option>
+</select>
+
+<div class="slider-container">
+<label for="difficulty">Difficulty/Silliness:</label>
+<div class="slider-wrapper">
+<span class="slider-label">Chill</span>
+<input type="range" id="difficulty" min="1" max="10" value="5" class="slider">
+<span class="slider-label">Wild!</span>
+</div>
+<span id="difficulty-value">5</span>
+</div>
+
+<button onclick="generateAdventure()">Generate Adventure</button>
+
+<div id="spinner" class="spinner" style="display: none;">
+  <div class="wheel"></div>
+  <p>Finding your adventure...</p>
+</div>
+
+<div id="result"></div>
+
+<script src="script.js"></script>
 
 </body>
 </html>

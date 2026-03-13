@@ -1,0 +1,129 @@
+body {
+font-family: Arial;
+text-align: center;
+padding: 40px;
+}
+
+select {
+padding: 8px 12px;
+font-size: 16px;
+margin: 10px 5px;
+}
+
+.slider-container {
+margin: 30px 0;
+padding: 20px;
+background-color: #f0f0f0;
+border-radius: 8px;
+}
+
+.slider-container label {
+font-size: 18px;
+font-weight: bold;
+display: block;
+margin-bottom: 15px;
+}
+
+.slider-wrapper {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 15px;
+margin-bottom: 10px;
+}
+
+.slider {
+width: 300px;
+height: 8px;
+border-radius: 5px;
+background: linear-gradient(to right, #4CAF50, #FFC107, #FF5252);
+outline: none;
+-webkit-appearance: none;
+appearance: none;
+cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 25px;
+height: 25px;
+border-radius: 50%;
+background: #333;
+cursor: pointer;
+box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.slider::-moz-range-thumb {
+width: 25px;
+height: 25px;
+border-radius: 50%;
+background: #333;
+cursor: pointer;
+border: none;
+box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.slider-label {
+font-size: 14px;
+font-weight: bold;
+min-width: 50px;
+}
+
+#difficulty-value {
+font-size: 24px;
+font-weight: bold;
+color: #333;
+min-width: 40px;
+}
+
+button {
+padding: 12px 30px;
+font-size: 18px;
+margin-top: 20px;
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+button:hover {
+background-color: #45a049;
+}
+
+#spinner {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.wheel {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #4CAF50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#spinner p {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+#result {
+  margin-top: 30px;
+  font-size: 20px;
+  padding: 20px;
+  background-color: #fff3cd;
+  border-radius: 8px;
+  border-left: 5px solid #FFC107;
+}
