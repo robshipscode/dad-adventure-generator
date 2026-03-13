@@ -182,7 +182,7 @@ function generateAdventure() {
       <p><strong>Challenge:</strong> ${challenge}</p>
       <p><strong>Reward:</strong> ${reward}</p>
     `;
-  }, 1500);
+  }, 5000);
 }
 
 // Update difficulty display value on slider change
