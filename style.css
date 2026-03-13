@@ -1,11 +1,11 @@
 body {
 font-family: Arial;
 text-align: center;
-padding: 40px;
+padding: 20px;
 }
 
 select {
-padding: 8px 12px;
+padding: 10px 15px;
 font-size: 16px;
 margin: 10px 5px;
 }
@@ -78,7 +78,7 @@ min-width: 40px;
 }
 
 button {
-padding: 12px 30px;
+padding: 15px 40px;
 font-size: 18px;
 margin-top: 20px;
 background-color: #4CAF50;
@@ -87,6 +87,7 @@ border: none;
 border-radius: 5px;
 cursor: pointer;
 transition: background-color 0.3s;
+min-height: 50px;
 }
 
 button:hover {
@@ -125,5 +126,104 @@ background-color: #45a049;
   padding: 20px;
   background-color: #fff3cd;
   border-radius: 8px;
-  border-left: 5px solid #FFC107;
+ 
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  select {
+    padding: 12px 15px;
+    font-size: 18px;
+    margin: 12px 5px;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .slider-container {
+    margin: 30px 0;
+    padding: 25px 15px;
+  }
+
+  .slider-container label {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .slider-wrapper {
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .slider {
+    width: 100%;
+    max-width: 280px;
+    height: 10px;
+  }
+
+  .slider::-webkit-slider-thumb {
+    width: 30px;
+    height: 30px;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+  }
+
+  .slider-label {
+    font-size: 15px;
+  }
+
+  #difficulty-value {
+    font-size: 28px;
+  }
+
+  button {
+    padding: 18px 50px;
+    font-size: 20px;
+    margin-top: 25px;
+    min-height: 60px;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .wheel {
+    width: 80px;
+    height: 80px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #4CAF50;
+  }
+
+  #spinner p {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  #result {
+    margin-top: 30px;
+    font-size: 18px;
+    padding: 25px 15px;
+  }
+
+  #result h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  #result p {
+    margin: 18px 0;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  #result strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+} border-left: 5px solid #FFC107;
 }
