@@ -73,70 +73,73 @@ const challenges = {
   Annabelle: {
     chill: [
       "Take a nice photo",
-      "Find something pretty",
-      "Notice interesting colors",
-      "Draw a simple map"
+      "Find something pretty in nature",
+      "Notice interesting colors around you",
+      "Sketch or draw something you see",
+      "Find flowers or pretty leaves"
     ],
     medium: [
-      "Take 3 creative photos",
+      "Take 3 creative photos of nature",
       "Make up a story about what you find",
-      "Find something beautiful in nature",
-      "Create a mini treasure map",
-      "Teach Dad a dance move"
+      "Collect pretty items for an art project",
+      "Create a mini nature collection",
+      "Teach Dad a new dance move or song"
     ],
     wild: [
-      "Act out an entire story using only silly faces",
-      "Take photos pretending to be a superhero",
-      "Make up the silliest dance ever",
-      "Speak in a funny accent the whole time",
-      "Create an imaginary creature and draw it",
-      "Do impressions of animals for Dad"
+      "Put on a theatrical performance with silly voices",
+      "Take photos as different character personalities",
+      "Make up and teach Dad the silliest dance",
+      "Do a funny fashion show with nature items",
+      "Create and perform a story with dramatic voices",
+      "Do impressions of different animals for Dad"
     ]
   },
   Jack: {
     chill: [
-      "Walk to a good spot",
-      "Find something cool",
-      "Look for interesting objects",
-      "Take your time exploring"
+      "Find rocks or sticks to explore with",
+      "Look for cool stuff to examine",
+      "Scout out the best climbing spots",
+      "Hunt for animal tracks or signs",
+      "Build something simple with found items"
     ],
     medium: [
-      "Jump over 5 sticks",
-      "Find something super tiny",
-      "Do your fastest run",
-      "Roar like a dinosaur",
-      "Find the biggest leaf"
+      "Do 5 jumping contests",
+      "Find something super tiny or tiny creature",
+      "Run a race against Dad",
+      "Climb or scramble up something safely",
+      "Build a cool structure with sticks and rocks"
     ],
     wild: [
-      "Do a cartwheel or summersault",
-      "Race Dad while making funny noises",
-      "Climb a tree (safely!) like a monkey",
-      "Stomp around like a giant kaiju",
-      "Slide down the biggest hill you can find",
-      "Run backwards as fast as you can"
+      "Do flips, cartwheels, or summersaults",
+      "Race Dad with silly running styles",
+      "Climb trees or rocks like a ninja",
+      "Stomp around making dinosaur roars",
+      "Slide down hills and do wild tricks",
+      "Run backwards and sideways as fast as possible"
     ]
   },
   Both: {
     chill: [
-      "Walk around together",
-      "Find things as a team",
-      "Chat and explore",
-      "Take a family photo"
+      "Explore together and talk about what you see",
+      "Find cool things as a team",
+      "Have a relaxed chat and enjoy time together",
+      "Take a nice family photo together",
+      "Collect interesting items together"
     ],
     medium: [
       "Work together to build something awesome",
       "Find 5 things as a team",
-      "Make up a team name",
-      "Do a silly victory dance together",
-      "Help each other complete the mission"
+      "Make up a fun team name together",
+      "Do a goofy dance together",
+      "Help each other and solve a challenge"
     ],
     wild: [
       "Create the silliest team chant ever",
-      "Have a three-legged race",
+      "Have a three-legged race or relay race",
       "Make ridiculous animal sounds together",
       "Do the goofiest dance battle ever",
-      "Create secret silly handshake",
-      "Roll down a grassy hill together"
+      "Create a secret silly handshake and dance",
+      "Have a rolling race down a hill together"
     ]
   }
 };
@@ -146,14 +149,31 @@ function randomItem(array) {
 }
 
 function getDifficultyLevel(value) {
-  if (value <= 3) return "chill";
+ 
+
+function isBeachLocation(location) {
+  const beaches = ["Beach", "beach", "water", "Water", "Pools"];
+  return beaches.some(beach => location.includes(beach));
+}
+
+function filterMissionsForLocation(location) {
+  const beachMissions = ["Skip stones in the water", "Build a sandcastle", "Play in the water", "Hunt for shells or treasures"];
+  
+  if (!isBeachLocation(location)) {
+    // Remove beach-specific missions for non-beach locations
+    return missions.filter(mission => !beachMissions.includes(mission));
+  }
+  
+  return missions;
+} if (value <= 3) return "chill";
   if (value <= 7) return "medium";
   return "wild";
 }
 
 function generateAdventure() {
   // Show spinner
-  document.getElementById("spinner").style.display = "block";
+  documentfilteredMissions = filterMissionsForLocation(location);
+    const mission = randomItem(filteredMer").style.display = "block";
   document.getElementById("result").innerHTML = "";
 
   // Simulate thinking time with spinning wheel
