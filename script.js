@@ -149,7 +149,10 @@ function randomItem(array) {
 }
 
 function getDifficultyLevel(value) {
- 
+  if (value <= 3) return "chill";
+  if (value <= 7) return "medium";
+  return "wild";
+}
 
 function isBeachLocation(location) {
   const beaches = ["Beach", "beach", "water", "Water", "Pools"];
@@ -165,15 +168,11 @@ function filterMissionsForLocation(location) {
   }
   
   return missions;
-} if (value <= 3) return "chill";
-  if (value <= 7) return "medium";
-  return "wild";
 }
 
 function generateAdventure() {
   // Show spinner
-  documentfilteredMissions = filterMissionsForLocation(location);
-    const mission = randomItem(filteredMer").style.display = "block";
+  document.getElementById("spinner").style.display = "block";
   document.getElementById("result").innerHTML = "";
 
   // Simulate thinking time with spinning wheel
@@ -189,7 +188,8 @@ function generateAdventure() {
     }
 
     const location = randomItem(locations);
-    const mission = randomItem(missions);
+    const filteredMissions = filterMissionsForLocation(location);
+    const mission = randomItem(filteredMissions);
     const reward = randomItem(rewards);
     const challenge = randomItem(challenges[selectedKid][difficultyLevel]);
 
